@@ -11,6 +11,7 @@
 ```
 sh.enableSharding('fruit')
 sh.shardCollection('fruit.fruit',{'id':'hashed'})
+sh.shardCollection('fruit.fruit',{'id':'hashed'}, {numInitialChunks: 1000}) //with 6 shards
 ```
 - Sharding output
 ```

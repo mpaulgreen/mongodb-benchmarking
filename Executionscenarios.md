@@ -22,4 +22,6 @@
 
 - 6 shards - Response Time
     - Similar response time as above
+- 6 shards - sh.shardCollection('fruit.fruit',{'id':'hashed'}, {numInitialChunks: 1000})
+  - Similar reponse time as above
     
