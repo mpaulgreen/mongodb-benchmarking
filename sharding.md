@@ -9,8 +9,11 @@
 
 - Commands to shard
 ```
-sh.enableSharding('fruit')
-sh.shardCollection('fruit.fruit',{'id':'hashed'})
+sh.enableSharding("fruits")
+db.demo.fruit.ensureIndex({_id: "hashed"})
+sh.shardCollection("fruits.demo.fruit",{"_id":"hashed"})
+
+
 ```
 - Sharding output
 ```
@@ -51,4 +54,61 @@ sh.shardCollection('fruit.fruit',{'id':'hashed'})
 ```
 sh.shardCollection('fruit.fruit',{'id':'hashed'}, {numInitialChunks: 1000}) //with 6 shards
 
+```
+
+```
+db.demo.fruit.getShardDistribution()
+```
+
+```
+Shard kogito-sharded-mongo-1 at kogito-sharded-mongo-1/kogito-sharded-mongo-1-0.kogito-sharded-mongo-sh.mongodb.svc.cluster.local:27017,kogito-sharded-mongo-1-1.kogito-sharded-mongo-sh.mongodb.svc.cluster.local:27017
+{
+  data: '0B',
+  docs: 0,
+  chunks: 2,
+  'estimated data per chunk': '0B',
+  'estimated docs per chunk': 0
+}
+---
+Shard kogito-sharded-mongo-0 at kogito-sharded-mongo-0/kogito-sharded-mongo-0-0.kogito-sharded-mongo-sh.mongodb.svc.cluster.local:27017,kogito-sharded-mongo-0-1.kogito-sharded-mongo-sh.mongodb.svc.cluster.local:27017
+{
+  data: '0B',
+  docs: 0,
+  chunks: 2,
+  'estimated data per chunk': '0B',
+  'estimated docs per chunk': 0
+}
+---
+Shard kogito-sharded-mongo-3 at kogito-sharded-mongo-3/kogito-sharded-mongo-3-0.kogito-sharded-mongo-sh.mongodb.svc.cluster.local:27017,kogito-sharded-mongo-3-1.kogito-sharded-mongo-sh.mongodb.svc.cluster.local:27017
+{
+  data: '0B',
+  docs: 0,
+  chunks: 2,
+  'estimated data per chunk': '0B',
+  'estimated docs per chunk': 0
+}
+---
+Shard kogito-sharded-mongo-2 at kogito-sharded-mongo-2/kogito-sharded-mongo-2-0.kogito-sharded-mongo-sh.mongodb.svc.cluster.local:27017,kogito-sharded-mongo-2-1.kogito-sharded-mongo-sh.mongodb.svc.cluster.local:27017
+{
+  data: '256.2MiB',
+  docs: 1767476,
+  chunks: 2,
+  'estimated data per chunk': '128.1MiB',
+  'estimated docs per chunk': 883738
+}
+---
+Totals
+{
+  data: '256.2MiB',
+  docs: 1767476,
+  chunks: 8,
+  'Shard kogito-sharded-mongo-1': [ '0 % data', '0 % docs in cluster', '0B avg obj size on shard' ],
+  'Shard kogito-sharded-mongo-0': [ '0 % data', '0 % docs in cluster', '0B avg obj size on shard' ],
+  'Shard kogito-sharded-mongo-3': [ '0 % data', '0 % docs in cluster', '0B avg obj size on shard' ],
+  'Shard kogito-sharded-mongo-2': [
+    '100 % data',
+    '100 % docs in cluster',
+    '152B avg obj size on shard'
+  ]
+}
 ```
