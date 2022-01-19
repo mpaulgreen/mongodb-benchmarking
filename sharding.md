@@ -1,7 +1,7 @@
 - Document that is been written
 ```
   {
-    id: '1886243104',  # hashed - Chosen for shard key
+    id: 'c9b2c8e6-fd7f-4153-bb2e-3a724f0597cf',  # hashed - Chosen for shard key
     name: 'c9b2c8e6-fd7f-4153-bb2e-3a724f0597cf',
     description: 'c9b2c8e6-fd7f-4153-bb2e-3a724f0597cf'
   }
