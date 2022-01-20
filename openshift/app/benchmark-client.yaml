@@ -16,10 +16,10 @@ spec:
       - name: private-reg-cred
       containers:
       - name: benchmark-client
-        image: quay.io/mpaulgreen/benchmark-client:2
+        image: quay.io/mpaulgreen/benchmark-client:11
         env:
         - name: URL
-          value: "http://mongodb-quickstart-mongodb.apps.mpkogito.c25t.p1.openshiftapps.com"
+          value: "http://mongodb-quickstart-mongodb.apps.mpkogito.pkgo.p1.openshiftapps.com/"
         - name: WORKER_POOL_SIZE
           value: "100"
         ports:
