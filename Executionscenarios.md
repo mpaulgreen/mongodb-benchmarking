@@ -1,46 +1,89 @@
-- 3 shards
-  - 1st Run
-  ```
-    /work $ curl -X GET http://localhost:9090/benchmark/120/60
-  {
-    "noOfExecutions" : 1030775,
-    "noOfFailures" : 0,
-    "minResponseTime" : {
-      "index" : 238080,
-      "responseTime" : 1
-    },
-    "maxResponseTime" : {
-      "index" : 37,
-      "responseTime" : 811
-    },
-    "averageResponseTime" : 6,
-    "percentile95" : 11,
-    "percentile99" : 27,
-    "totalTimeMillis" : 6635351,
-    "elapsedTimeMillis" : 120004,
-    "requestsPerSecond" : 8589.0
-  }
-  ```
-
-  - 2nd Run
+- With data distribution 3 shards (4 GB 4 CPU)
 ```
-  /work $ curl -X GET http://localhost:9090/benchmark/120/60
+/work $ curl -X GET http://localhost:9090/benchmark/120/60
+
 {
-  "noOfExecutions" : 981674,
+  "noOfExecutions" : 1223072,
   "noOfFailures" : 0,
   "minResponseTime" : {
-    "index" : 31373,
+    "index" : 10522,
     "responseTime" : 1
   },
   "maxResponseTime" : {
-    "index" : 494271,
-    "responseTime" : 151
+    "index" : 693178,
+    "responseTime" : 171
   },
-  "averageResponseTime" : 6,
-  "percentile95" : 11,
-  "percentile99" : 41,
-  "totalTimeMillis" : 6675097,
+  "averageResponseTime" : 5,
+  "percentile95" : 9,
+  "percentile99" : 19,
+  "totalTimeMillis" : 6541209,
   "elapsedTimeMillis" : 120006,
-  "requestsPerSecond" : 8180.0
+  "requestsPerSecond" : 10191.0
 }
 ```
+
+-  With data distribution across 6 shards (4 GB 4 CPU)
+```
+/work $ curl -X GET http://localhost:9090/benchmark/120/60
+{
+  "noOfExecutions" : 1243126,
+  "noOfFailures" : 0,
+  "minResponseTime" : {
+    "index" : 216368,
+    "responseTime" : 1
+  },
+  "maxResponseTime" : {
+    "index" : 34,
+    "responseTime" : 774
+  },
+  "averageResponseTime" : 5,
+  "percentile95" : 13,
+  "percentile99" : 26,
+  "totalTimeMillis" : 6551768,
+  "elapsedTimeMillis" : 120014,
+  "requestsPerSecond" : 10358.0
+}
+```
+
+
+- Sharding output
+
+```
+Totals
+{
+  data: '208.94MiB',
+  docs: 1244860,
+  chunks: 12,
+  'Shard kogito-sharded-mongo-0': [
+    '16.71 % data',
+    '16.71 % docs in cluster',
+    '176B avg obj size on shard'
+  ],
+  'Shard kogito-sharded-mongo-3': [
+    '16.64 % data',
+    '16.64 % docs in cluster',
+    '176B avg obj size on shard'
+  ],
+  'Shard kogito-sharded-mongo-2': [
+    '16.66 % data',
+    '16.66 % docs in cluster',
+    '176B avg obj size on shard'
+  ],
+  'Shard kogito-sharded-mongo-4': [
+    '16.69 % data',
+    '16.69 % docs in cluster',
+    '176B avg obj size on shard'
+  ],
+  'Shard kogito-sharded-mongo-5': [
+    '16.64 % data',
+    '16.64 % docs in cluster',
+    '176B avg obj size on shard'
+  ],
+  'Shard kogito-sharded-mongo-1': [
+    '16.63 % data',
+    '16.63 % docs in cluster',
+    '176B avg obj size on shard'
+  ]
+}
+```
+

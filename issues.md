@@ -1,3 +1,5 @@
 - Jan 20
     - All data landing up on one shard
-    - Memory consumption on one shard in very high and increasing. At some point the pod will get evicted. (Vertical Scaling vs Horizontal Scaling)
+    - Horizontal Scaling not happening
+- Jan 21
+    - Horizontal scaling not happening
