@@ -23,7 +23,7 @@
   ```
 
   - 2nd Run
-  ```
+```
   /work $ curl -X GET http://localhost:9090/benchmark/120/60
 {
   "noOfExecutions" : 981674,
@@ -43,4 +43,4 @@
   "elapsedTimeMillis" : 120006,
   "requestsPerSecond" : 8180.0
 }
-  ```
+```
