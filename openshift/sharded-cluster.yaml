@@ -8,7 +8,7 @@ kind: MongoDB
 metadata:
   name: kogito-sharded-mongo
 spec:
-  shardCount: 6
+  shardCount: 3
   mongodsPerShardCount: 3
   mongosCount: 2
   configServerCount: 3
@@ -48,11 +48,11 @@ spec:
           - name: mongodb-enterprise-database
             resources:
               limits:
-                cpu: "4"
-                memory: 4000M
+                cpu: ".5"
+                memory: 500M
               requests:
-                cpu: "3.8"
-                memory: 3500M
+                cpu: ".5"
+                memory: 500M
 
   mongosPodSpec:
     podTemplate:

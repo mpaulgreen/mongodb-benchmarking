@@ -1,7 +1,5 @@
-- With data distribution 3 shards (4 GB 4 CPU)
+- 1M+ data across 3 shards (4 GB 4 CPU)
 ```
-/work $ curl -X GET http://localhost:9090/benchmark/120/60
-
 {
   "noOfExecutions" : 1223072,
   "noOfFailures" : 0,
@@ -22,9 +20,30 @@
 }
 ```
 
--  With data distribution across 6 shards (4 GB 4 CPU)
+- ~3M data across 3 shards (4 GB 4 CPU)
 ```
-/work $ curl -X GET http://localhost:9090/benchmark/120/60
+{
+  "noOfExecutions" : 2887904,
+  "noOfFailures" : 0,
+  "minResponseTime" : {
+    "index" : 13295,
+    "responseTime" : 1
+  },
+  "maxResponseTime" : {
+    "index" : 1102401,
+    "responseTime" : 408
+  },
+  "averageResponseTime" : 20,
+  "percentile95" : 72,
+  "percentile99" : 118,
+  "totalTimeMillis" : 58349158,
+  "elapsedTimeMillis" : 300031,
+  "requestsPerSecond" : 9625.0
+}
+```
+
+-  1M+ data across 6 shards (4 GB 4 CPU)
+```
 {
   "noOfExecutions" : 1243126,
   "noOfFailures" : 0,
@@ -45,45 +64,24 @@
 }
 ```
 
-
-- Sharding output
-
+- 3M+ data across 6 Shards( 4GB, 4CPU)
 ```
-Totals
 {
-  data: '208.94MiB',
-  docs: 1244860,
-  chunks: 12,
-  'Shard kogito-sharded-mongo-0': [
-    '16.71 % data',
-    '16.71 % docs in cluster',
-    '176B avg obj size on shard'
-  ],
-  'Shard kogito-sharded-mongo-3': [
-    '16.64 % data',
-    '16.64 % docs in cluster',
-    '176B avg obj size on shard'
-  ],
-  'Shard kogito-sharded-mongo-2': [
-    '16.66 % data',
-    '16.66 % docs in cluster',
-    '176B avg obj size on shard'
-  ],
-  'Shard kogito-sharded-mongo-4': [
-    '16.69 % data',
-    '16.69 % docs in cluster',
-    '176B avg obj size on shard'
-  ],
-  'Shard kogito-sharded-mongo-5': [
-    '16.64 % data',
-    '16.64 % docs in cluster',
-    '176B avg obj size on shard'
-  ],
-  'Shard kogito-sharded-mongo-1': [
-    '16.63 % data',
-    '16.63 % docs in cluster',
-    '176B avg obj size on shard'
-  ]
+  "noOfExecutions" : 3201917,
+  "noOfFailures" : 0,
+  "minResponseTime" : {
+    "index" : 18458,
+    "responseTime" : 1
+  },
+  "maxResponseTime" : {
+    "index" : 2964415,
+    "responseTime" : 664
+  },
+  "averageResponseTime" : 18,
+  "percentile95" : 63,
+  "percentile99" : 104,
+  "totalTimeMillis" : 58292693,
+  "elapsedTimeMillis" : 300019,
+  "requestsPerSecond" : 10672.0
 }
 ```
-
