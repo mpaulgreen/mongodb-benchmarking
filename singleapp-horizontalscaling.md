@@ -1,4 +1,4 @@
-- 1 shard
+- 1 shard (0.5M, 0.5 CPU)
 ```
 {
   "noOfExecutions" : 133620,
@@ -41,7 +41,7 @@
 }
 ```
 
-- 6 shards
+- 6 shards (0.5M, 0.5 CPU)
 ```
 {
   "noOfExecutions" : 354146,
@@ -63,7 +63,7 @@
 }
 ```
 
-- 9 shards
+- 9 shards (0.5M, 0.5 CPU)
 ```
 {
   "noOfExecutions" : 420051,
@@ -84,3 +84,48 @@
   "requestsPerSecond" : 3500.0
 }
 ```
+
+- 36 shards (0.5M, 0.5 CPU)
+```
+{
+  "noOfExecutions" : 657063,
+  "noOfFailures" : 0,
+  "minResponseTime" : {
+    "index" : 696,
+    "responseTime" : 2
+  },
+  "maxResponseTime" : {
+    "index" : 64373,
+    "responseTime" : 371
+  },
+  "averageResponseTime" : 10,
+  "percentile95" : 28,
+  "percentile99" : 60,
+  "totalTimeMillis" : 6864483,
+  "elapsedTimeMillis" : 120033,
+  "requestsPerSecond" : 5474.0
+}
+```
+- 48 shards (0.5M, 0.5 CPU)
+
+```
+{
+  "noOfExecutions" : 842933,
+  "noOfFailures" : 0,
+  "minResponseTime" : {
+    "index" : 5550,
+    "responseTime" : 1
+  },
+  "maxResponseTime" : {
+    "index" : 32,
+    "responseTime" : 2306
+  },
+  "averageResponseTime" : 8,
+  "percentile95" : 34,
+  "percentile99" : 65,
+  "totalTimeMillis" : 6764679,
+  "elapsedTimeMillis" : 120010,
+  "requestsPerSecond" : 7023.0
+}
+```
+
